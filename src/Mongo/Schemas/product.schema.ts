@@ -19,6 +19,10 @@ export class Product {
     price: number
 
     @Prop()
+    // @IsNotEmpty({message: 'O departamento do produto é obrigatório'})
+    departamento: string
+
+    @Prop()
     quantity: Number
 
     @Prop()

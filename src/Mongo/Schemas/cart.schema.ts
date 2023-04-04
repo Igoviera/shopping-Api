@@ -8,7 +8,9 @@ export type CartSchema = HydratedDocument<Cart>
 export class Cart {
     @Prop({type:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }]})
     product: Product[]
-    total: number
+
+    @Prop()
+    valorTotal: number
 }
 
 export const CartSchema = SchemaFactory.createForClass(Cart)

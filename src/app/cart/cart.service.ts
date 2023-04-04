@@ -15,71 +15,73 @@ export class CartService {
 
     async addProductCart(cartId: string, productId: string): Promise<Cart> {
         const cart = await this.cartModelo.findById(cartId).populate('product');
-
+      
         if (!cart) {
-            throw new NotFoundException('Carrinho não encontrado!');
+          throw new NotFoundException('Carrinho não encontrado!');
+        }
+      
+        const product = await this.productModelo.findById(productId);
+      
+        if (!product) {
+          throw new NotFoundException(`Produto com o ID ${productId} não encontrado!`);
         }
 
+    
+      
+        cart.product.push(product);
+      
+        // Atualiza o valor de 'total' manualmente somando os preços de todos os produtos do carrinho
+        const total = cart.product.reduce((acc, product) => acc + product.price, 0);
+        cart.valorTotal = total;
+      
+        await cart.save();
+      
+        return cart;
+      }
+
+    async allProductCart() {
+    const productExiste = await this.cartModelo.find({}).populate('product','name description price').exec()
+
+    if (!productExiste) {
+        throw new BadRequestException('Carrinho esta vazio')
+    }
+
+    return productExiste
+}
+
+    async productById(cardId: string) {
+    const productExiste = await this.cartModelo.findById(cardId).populate('product')
+
+    if (!productExiste) {
+        throw new BadRequestException('Produto não encontrado')
+    }
+
+    return productExiste
+}
+
+    async deleteProductCart(cartId: string, productId: Product) {
+    const cart = await this.cartModelo.findById(cartId);
+
+    if (!cart) {
+        throw new NotFoundException('Carrinho não encontrado!');
+    }
+
+    const productIndex = cart.product.indexOf(productId);
+
+    if (productIndex >= 0) {
         const product = await this.productModelo.findById(productId);
 
         if (!product) {
             throw new NotFoundException(`Produto com o ID ${productId} não encontrado!`);
         }
 
-        cart.product.push(product);
-
-        // Atualiza o valor de 'total' manualmente somando os preços de todos os produtos do carrinho
-        const total = cart.product.reduce((acc, product) => acc + product.price, 0);
-        cart.total = total;
+        cart.valorTotal -= product.price;
+        cart.product.splice(productIndex, 1);
 
         await cart.save();
-
         return cart;
+    } else {
+        throw new NotFoundException('Produto não encontrado no carrinho!');
     }
-
-    async allProductCart() {
-        const productExiste = await this.cartModelo.find({}).populate('product').exec()
-
-        if (!productExiste) {
-            throw new BadRequestException('Carrinho esta vazio')
-        }
-
-        return productExiste
-    }
-
-    async productById(cardId: string) {
-        const productExiste = await this.cartModelo.findById(cardId).populate('product')
-
-        if (!productExiste) {
-            throw new BadRequestException('Produto não encontrado')
-        }
-
-        return productExiste
-    }
-
-    async deleteProductCart(cartId: string, productId: Product) {
-        const cart = await this.cartModelo.findById(cartId);
-
-        if (!cart) {
-            throw new NotFoundException('Carrinho não encontrado!');
-        }
-
-        const productIndex = cart.product.indexOf(productId);
-
-        if (productIndex >= 0) {
-            const product = await this.productModelo.findById(productId);
-
-            if (!product) {
-                throw new NotFoundException(`Produto com o ID ${productId} não encontrado!`);
-            }
-
-            cart.total -= product.price;
-            cart.product.splice(productIndex, 1);
-
-            await cart.save();
-            return cart;
-        } else {
-            throw new NotFoundException('Produto não encontrado no carrinho!');
-        }
-    }
+}
 }

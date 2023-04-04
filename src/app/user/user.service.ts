@@ -35,6 +35,12 @@ export class UserService {
     }
 
     async userById(userId: string) {
-        return await this.userModel.findById(userId)
+        return await this.userModel.findById(userId).populate({
+            path: 'cart',
+            populate:{
+                path:'product',
+                model: 'Product'
+            }
+        }).exec()
     }
 }

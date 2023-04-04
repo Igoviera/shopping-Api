@@ -13,12 +13,27 @@ export class ProductsService {
         return await createProduct.save()
     };
 
-    async productAll(){
-        const productAll = await this.productModel.find().exec()
+    async productAll(name?: string){
+        let query = {}
+
+        if(name){
+            const regex = new RegExp(name, 'i')
+            query = {name: regex}
+        }
+        const productAll = await this.productModel.find(query).exec()
         
         if(!productAll){
             throw new BadRequestException('Produtos não encontrados')
         }
         return productAll
+    };
+
+    async productById(productById: string){
+        const productByIdExtist =  await this.productModel.findById(productById).exec()
+
+        if(!productByIdExtist){
+            throw new BadRequestException('Produto não encontrado')
+        }
+        return productByIdExtist
     }
 }
