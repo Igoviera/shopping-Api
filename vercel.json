@@ -3,7 +3,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "nest-cli.json"
+        "dest": "dist/index.js"
       }
     ],
     "env": {
