@@ -2,17 +2,23 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ProductsService } from './products.service';
 
 describe('ProductsService', () => {
-  let service: ProductsService;
+  let productService: ProductsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [ProductsService],
     }).compile();
 
-    service = module.get<ProductsService>(ProductsService);
+    productService = module.get<ProductsService>(ProductsService);
   });
 
   it('should be defined', () => {
-    expect(service).toBeDefined();
+    expect(productService).toBeDefined();
   });
+
+  describe('productAll', () => {
+    it('Espero retornar uma lista de produtos', async () => {
+      
+    })
+  })
 });

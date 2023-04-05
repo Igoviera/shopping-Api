@@ -28,6 +28,15 @@ export class ProductsService {
         return productAll
     };
 
+    async findProductCategory(category: string){
+        const productCategory = await this.productModel.find({departamento: category}).exec()
+
+        if(!productCategory){
+            throw new BadRequestException('Produtos não encontrados')
+        }
+        return productCategory
+    }
+
     async productById(productById: string){
         const productByIdExtist =  await this.productModel.findById(productById).exec()
 
