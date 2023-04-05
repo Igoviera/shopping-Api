@@ -1,10 +1,16 @@
 {
     "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
+    ],
     "routes": [
       {
         "src": "/.*",
-        "dest": "/dist/main.js"
+        "dest": "dist/index.js"
       }
     ],
-    "entrypoint": "/dist/main.js"
+    "outputDirectory": "build"
   }
