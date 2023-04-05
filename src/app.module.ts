@@ -17,7 +17,7 @@ import { UserService } from './app/user/user.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.DATABASE_URL),
+    MongooseModule.forRoot('mongodb+srv://energy:energy1045@cluster0.unjannn.mongodb.net/dbfarmacia'),
     MongooseModule.forFeature([
       {name:Product.name, schema: ProductSchema},
       {name:Cart.name, schema: CartSchema},
