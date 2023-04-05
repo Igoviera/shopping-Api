@@ -1,11 +1,5 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "nest-cli.json",
-        "use": "@now/node"
-      }
-    ],
     "routes": [
       {
         "src": "/(.*)",
