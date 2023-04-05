@@ -7,7 +7,7 @@
       }
     ],
     "env": {
-      "MONGODB_URI": "<sua-uri-do-mongodb-atlas>"
+      "DATABASE_URL": "mongodb+srv://energy:energy1045@cluster0.unjannn.mongodb.net/dbfarmacia"
     }
   }
   
