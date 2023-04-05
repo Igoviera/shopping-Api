@@ -2,18 +2,18 @@
     "version": 2,
     "builds": [
       {
-        "src": "dist/main.js",
-        "use": "@vercel/node"
+        "src": "nest-cli.json",
+        "use": "@now/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/dist/main.js"
+        "dest": "nest-cli.json"
       }
     ],
     "env": {
-        "DATABASE_URL": "mongodb+srv://energy:energy1045@cluster0.unjannn.mongodb.net/dbfarmacia"
-      }
+      "MONGODB_URI": "<sua-uri-do-mongodb-atlas>"
+    }
   }
   
