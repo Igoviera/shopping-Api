@@ -14,21 +14,23 @@ export class UserService {
         @InjectModel(Cart.name) private readonly cartModel: Model<Cart>,
     ) { }
 
-    async createUser(user: UserDto) { 
-        const createCart = new this.cartModel({product: []})
-        await createCart.save()
-        const createUser = new this.userModel({...user, cart:createCart._id})
-        await createUser.save()
-
-        return createUser 
-      
+    async createUser(user: UserDto) {
+        try {
+            const cart = await this.cartModel.create({ product: [] });
+            const newUser = await this.userModel.create({ ...user, cart: cart._id });
+            
+            return newUser;
+        } catch (error) {
+            console.error(error);
+            throw new Error('Não foi possível criar o usuário');
+        }
     }
 
     async allUser() {
         return await this.userModel.find({}).populate({
             path: 'cart',
-            populate:{
-                path:'product',
+            populate: {
+                path: 'product',
                 model: 'Product'
             }
         }).exec()
@@ -37,8 +39,8 @@ export class UserService {
     async userById(userId: string) {
         return await this.userModel.findById(userId).populate({
             path: 'cart',
-            populate:{
-                path:'product',
+            populate: {
+                path: 'product',
                 model: 'Product'
             }
         }).exec()
