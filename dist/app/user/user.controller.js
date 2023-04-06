@@ -33,6 +33,8 @@ let UserController = class UserController {
 };
 __decorate([
     (0, common_1.Post)(),
+    (0, decorators_1.ApiOperation)({ summary: 'Cadastrar usuario' }),
+    (0, decorators_1.ApiResponse)({ status: 200, description: 'Usuario cadastrado com sucesso' }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [user_dto_1.UserDto]),
@@ -46,6 +48,9 @@ __decorate([
 ], UserController.prototype, "allUser", null);
 __decorate([
     (0, common_1.Get)(':idUser'),
+    (0, decorators_1.ApiOperation)({ summary: 'Listar usuario pelo ID' }),
+    (0, decorators_1.ApiResponse)({ status: 200, description: 'Usuario retornado com sucesso' }),
+    (0, decorators_1.ApiResponse)({ status: 409, description: 'Usuario não encontrado' }),
     __param(0, (0, common_1.Param)('idUser')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),

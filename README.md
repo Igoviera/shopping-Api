@@ -14,3 +14,6 @@ DATABASE_URL = <URL do banco de dados MongoDB>
 npm run start:dev
 
 Isso iniciará o servidor de desenvolvimento em http://localhost:8000>.
+
+## Link do Swagger
+<http://localhost:8000/api>
