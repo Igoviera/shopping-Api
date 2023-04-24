@@ -17,9 +17,11 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const product_schema_1 = require("../../Mongo/Schemas/product.schema");
+const comment_schema_1 = require("../../Mongo/Schemas/comment.schema");
 let ProductsService = class ProductsService {
-    constructor(productModel) {
+    constructor(productModel, commentModel) {
         this.productModel = productModel;
+        this.commentModel = commentModel;
     }
     async createProduct(product) {
         try {
@@ -54,7 +56,7 @@ let ProductsService = class ProductsService {
     }
     async productById(productById) {
         try {
-            const productByIdExtist = await this.productModel.findById(productById).exec();
+            const productByIdExtist = await this.productModel.findById(productById).populate('comments.user').exec();
             if (!productByIdExtist) {
                 throw new common_1.BadRequestException('Produto não encontrado');
             }
@@ -69,7 +71,9 @@ let ProductsService = class ProductsService {
 ProductsService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(product_schema_1.Product.name)),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __param(1, (0, mongoose_1.InjectModel)(comment_schema_1.Comment.name)),
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        mongoose_2.Model])
 ], ProductsService);
 exports.ProductsService = ProductsService;
 //# sourceMappingURL=products.service.js.map

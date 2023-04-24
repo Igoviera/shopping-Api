@@ -35,6 +35,10 @@ __decorate([
     (0, mongoose_2.Prop)({ type: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Cart' }] }),
     __metadata("design:type", cart_schema_1.Cart)
 ], User.prototype, "cart", void 0);
+__decorate([
+    (0, mongoose_2.Prop)({ type: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Comment' }] }),
+    __metadata("design:type", Array)
+], User.prototype, "comments", void 0);
 User = __decorate([
     (0, mongoose_2.Schema)()
 ], User);

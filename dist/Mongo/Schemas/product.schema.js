@@ -10,36 +10,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductSchema = exports.Product = void 0;
-const mongoose_1 = require("@nestjs/mongoose");
+const mongoose_1 = require("mongoose");
+const mongoose_2 = require("@nestjs/mongoose");
 let Product = class Product {
 };
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_2.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "name", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_2.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "description", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_2.Prop)(),
     __metadata("design:type", Number)
 ], Product.prototype, "price", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_2.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "departamento", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_2.Prop)(),
     __metadata("design:type", Number)
 ], Product.prototype, "quantity", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_2.Prop)(),
     __metadata("design:type", String)
 ], Product.prototype, "img", void 0);
+__decorate([
+    (0, mongoose_2.Prop)({ type: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Comment' }] }),
+    __metadata("design:type", Array)
+], Product.prototype, "comments", void 0);
 Product = __decorate([
-    (0, mongoose_1.Schema)()
+    (0, mongoose_2.Schema)()
 ], Product);
 exports.Product = Product;
-exports.ProductSchema = mongoose_1.SchemaFactory.createForClass(Product);
+exports.ProductSchema = mongoose_2.SchemaFactory.createForClass(Product);
 //# sourceMappingURL=product.schema.js.map

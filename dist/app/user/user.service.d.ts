@@ -26,6 +26,7 @@ import { Model } from 'mongoose';
 import { Cart } from 'src/Mongo/Schemas/cart.schema';
 import { User } from 'src/Mongo/Schemas/user.schema';
 import { UserDto } from './user.dto';
+import { AuthDto } from 'src/auth/auth.Dto';
 export declare class UserService {
     private readonly userModel;
     private readonly cartModel;
@@ -37,6 +38,9 @@ export declare class UserService {
         _id: import("mongoose").Types.ObjectId;
     }, never>, never>[]>;
     userById(userId: string): Promise<import("mongoose").Document<unknown, {}, User> & Omit<User & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>>;
+    findOne(user: AuthDto): Promise<import("mongoose").Document<unknown, {}, User> & Omit<User & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;
 }

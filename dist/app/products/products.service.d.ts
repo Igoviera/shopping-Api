@@ -25,9 +25,11 @@
 import { Model } from 'mongoose';
 import { Product } from 'src/Mongo/Schemas/product.schema';
 import { ProductDto } from './prodct.dto';
+import { Comment } from 'src/Mongo/Schemas/comment.schema';
 export declare class ProductsService {
     private readonly productModel;
-    constructor(productModel: Model<Product>);
+    private readonly commentModel;
+    constructor(productModel: Model<Product>, commentModel: Model<Comment>);
     createProduct(product: ProductDto): Promise<import("mongoose").Document<unknown, {}, Product> & Omit<Product & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;

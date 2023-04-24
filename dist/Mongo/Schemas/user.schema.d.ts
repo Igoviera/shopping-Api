@@ -6,6 +6,7 @@ export declare class User {
     email: String;
     password: String;
     cart: Cart;
+    comments: Comment[];
 }
 export declare const UserSchema: mongoose.Schema<User, mongoose.Model<User, any, any, any, mongoose.Document<unknown, any, User> & Omit<User & {
     _id: mongoose.Types.ObjectId;

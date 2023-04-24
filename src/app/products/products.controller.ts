@@ -1,9 +1,10 @@
-import { Body, Controller, Post, Get, Param } from '@nestjs/common';
+import { Body, Controller, Post, Get, Param, UseGuards } from '@nestjs/common';
 import { UsePipes } from '@nestjs/common/decorators';
 import { ValidationPipe } from '@nestjs/common/pipes';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger/dist';
 import { ProductDto } from './prodct.dto';
 import { ProductsService } from './products.service';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('products')
 @ApiTags('Produtos')

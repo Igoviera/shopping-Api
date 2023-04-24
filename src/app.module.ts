@@ -13,6 +13,11 @@ import { UserModule } from './app/user/user.module';
 import { User, UserSchema } from './Mongo/Schemas/user.schema';
 import { UserController } from './app/user/user.controller';
 import { UserService } from './app/user/user.service';
+import { AuthModule } from './auth/auth.module';
+import { CommetModule } from './app/commet/commet.module';
+import { Comment, CommentsSchema } from './Mongo/Schemas/comment.schema';
+import { CommetController } from './app/commet/commet.controller';
+import { CommetService } from './app/commet/commet.service';
 
 @Module({
   imports: [
@@ -21,15 +26,18 @@ import { UserService } from './app/user/user.service';
     MongooseModule.forFeature([
       {name:Product.name, schema: ProductSchema},
       {name:Cart.name, schema: CartSchema},
-      {name:User.name, schema: UserSchema}
+      {name:User.name, schema: UserSchema},
+      {name:Comment.name, schema: CommentsSchema}
     ]),
     UserModule,
     ProductsModule,
     CartModule,
+    AuthModule,
+    CommetModule,
    
 
   ],
-  controllers: [ProductsController, CartController, UserController],
-  providers: [ProductsService, CartService, UserService],
+  controllers: [ProductsController, CartController, UserController, CommetController],
+  providers: [ProductsService, CartService, UserService, CommetService],
 })
 export class AppModule {}

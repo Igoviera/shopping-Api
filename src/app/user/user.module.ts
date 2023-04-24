@@ -14,6 +14,7 @@ import { UserService } from './user.service';
       { name: Product.name, schema: ProductSchema}
     ]),
   ],
+  exports:[UserService],
   controllers: [UserController],
   providers: [UserService],
 })

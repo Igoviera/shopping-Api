@@ -15,13 +15,13 @@ const mongoose_2 = require("@nestjs/mongoose");
 let Cart = class Cart {
 };
 __decorate([
-    (0, mongoose_2.Prop)({ type: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Product' }] }),
-    __metadata("design:type", Array)
-], Cart.prototype, "product", void 0);
-__decorate([
     (0, mongoose_2.Prop)(),
     __metadata("design:type", Number)
 ], Cart.prototype, "valorTotal", void 0);
+__decorate([
+    (0, mongoose_2.Prop)({ type: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Product' }] }),
+    __metadata("design:type", Array)
+], Cart.prototype, "product", void 0);
 Cart = __decorate([
     (0, mongoose_2.Schema)()
 ], Cart);

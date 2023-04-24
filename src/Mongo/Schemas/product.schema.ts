@@ -1,6 +1,7 @@
-import { HydratedDocument,} from "mongoose";
+import mongoose, { HydratedDocument,} from "mongoose";
 import { Prop, SchemaFactory, Schema} from '@nestjs/mongoose';
 import { IsNotEmpty } from "class-validator";
+import { Comment } from "./comment.schema";
 
 export type ProductSchema = HydratedDocument<Product>
 
@@ -27,6 +28,9 @@ export class Product {
 
     @Prop()
     img: String
+
+    @Prop({type:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]})
+    comments: Comment[]
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product)

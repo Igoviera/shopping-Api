@@ -52,6 +52,9 @@ let UserService = class UserService {
             }
         }).exec();
     }
+    async findOne(user) {
+        return await this.userModel.findOne({ email: user.email });
+    }
 };
 UserService = __decorate([
     (0, common_1.Injectable)(),

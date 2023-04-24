@@ -6,6 +6,7 @@ import { Product } from 'src/Mongo/Schemas/product.schema';
 import { User } from 'src/Mongo/Schemas/user.schema';
 import { CartDto } from '../cart/cart.dto';
 import { UserDto } from './user.dto';
+import { AuthDto } from 'src/auth/auth.Dto';
 
 @Injectable()
 export class UserService {
@@ -44,5 +45,9 @@ export class UserService {
                 model: 'Product'
             }
         }).exec()
+    }
+
+    async findOne(user: AuthDto) {
+       return await this.userModel.findOne({email: user.email})
     }
 }

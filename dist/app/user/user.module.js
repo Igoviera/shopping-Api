@@ -25,6 +25,7 @@ UserModule = __decorate([
                 { name: product_schema_1.Product.name, schema: product_schema_1.ProductSchema }
             ]),
         ],
+        exports: [user_service_1.UserService],
         controllers: [user_controller_1.UserController],
         providers: [user_service_1.UserService],
     })
