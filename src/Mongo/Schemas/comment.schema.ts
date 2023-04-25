@@ -10,14 +10,14 @@ export class Comment {
     @Prop()
     text: string
 
+    @Prop({ default: Date.now })
+    createdAt: Date
+
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
     user: User
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Product' })
     product: Product
-
-    @Prop({default: Date.now})
-    createdAt: Date
 }
 
 export const CommentsSchema = SchemaFactory.createForClass(Comment)

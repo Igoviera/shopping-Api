@@ -56,7 +56,13 @@ let ProductsService = class ProductsService {
     }
     async productById(productById) {
         try {
-            const productByIdExtist = await this.productModel.findById(productById).populate('comments.user').exec();
+            const productByIdExtist = await this.productModel.findById(productById).populate({
+                path: 'comments',
+                populate: {
+                    path: 'user',
+                    select: 'name email'
+                }
+            }).exec();
             if (!productByIdExtist) {
                 throw new common_1.BadRequestException('Produto não encontrado');
             }

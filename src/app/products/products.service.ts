@@ -10,7 +10,7 @@ export class ProductsService {
     constructor(
         @InjectModel(Product.name) private readonly productModel: Model<Product>,
         @InjectModel(Comment.name) private readonly commentModel: Model<Comment>
-        ) { }
+    ) { }
 
     async createProduct(product: ProductDto) {
         try {
@@ -48,7 +48,13 @@ export class ProductsService {
 
     async productById(productById: string) {
         try {
-            const productByIdExtist = await this.productModel.findById(productById).populate('comments.user').exec()
+            const productByIdExtist = await this.productModel.findById(productById).populate({
+                path: 'comments',
+                populate: {
+                    path: 'user',
+                    select: 'name email'
+                }
+            }).exec()
 
             if (!productByIdExtist) {
                 throw new BadRequestException('Produto não encontrado')

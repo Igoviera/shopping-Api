@@ -18,6 +18,7 @@ export class CommetService {
         try {
             const product = await this.productModel.findById(producId).populate('comments.user');
             const user = await this.userModel.findById(userId);
+            console.log("🚀 ", user)
         
             if (!product) {
               throw new Error('Produto não encontrado')
@@ -28,15 +29,16 @@ export class CommetService {
             }
         
             const newComment = new this.commentModel(comment);
-            console.log("🚀 ~ file: commet.service.ts:31 ~ CommetService ~ creatComment ~ newComment:", newComment)
+       
+            newComment.user = user;
+            
+            newComment.save()
 
-            newComment.user = user._id;
-        
             product.comments.push(newComment);
             await product.save();
         
-            user.comments.push(newComment);
-            await user.save();
+            //user.comments.push(newComment);
+            // await user.save();
         
             return newComment;
         
