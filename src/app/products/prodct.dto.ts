@@ -10,7 +10,7 @@ export class ProductDto {
     @IsNotEmpty()
     @IsString()
     @MinLength(2)
-    @MaxLength(255)
+    @MaxLength(500)
     description: string;
 
     @IsNotEmpty()
