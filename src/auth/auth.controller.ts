@@ -9,8 +9,8 @@ export class AuthController {
 
     @HttpCode(HttpStatus.OK)
     @Post('login')
-    async signIn(@Body() user: AuthDto){
-        return this.authService.signIn(user)
+    async signIn(@Body() { email, password }: { email: string, password: string }){
+        return this.authService.signIn({email, password})
     }
 
     @UseGuards(AuthGuard)    

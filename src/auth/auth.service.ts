@@ -11,11 +11,11 @@ export class AuthService {
         private jwtService: JwtService
     ) {}
 
-    async signIn(user: AuthDto) {  
+    async signIn(user: {email: string, password: string}) {  
         const userAuth = await this.usersService.findOne(user)
 
         if(userAuth.password !== user.password){
-            throw new UnauthorizedException();
+            throw new UnauthorizedException('E-mail ou senha inválida');
         }
         const payload = {email: userAuth.email, sub: userAuth._id}
 
