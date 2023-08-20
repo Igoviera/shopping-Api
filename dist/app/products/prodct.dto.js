@@ -14,23 +14,50 @@ const class_validator_1 = require("class-validator");
 class ProductDto {
 }
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'O nome do produto é obrigatório' }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.MinLength)(2),
     (0, class_validator_1.MaxLength)(100),
     __metadata("design:type", String)
 ], ProductDto.prototype, "name", void 0);
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'A descrição do produto é obrigatória' }),
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.MinLength)(2),
     (0, class_validator_1.MaxLength)(500),
     __metadata("design:type", String)
 ], ProductDto.prototype, "description", void 0);
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'O preço do produto é obrigatório' }),
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], ProductDto.prototype, "price", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'O departamento do produto é obrigatório' }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.MaxLength)(100),
+    __metadata("design:type", String)
+], ProductDto.prototype, "departamento", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'A quantidade em estoque é obrigatória' }),
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], ProductDto.prototype, "stock", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'A marca do produto é obrigatória' }),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.MaxLength)(255),
+    (0, class_validator_1.MinLength)(2),
+    __metadata("design:type", String)
+], ProductDto.prototype, "brand", void 0);
+__decorate([
+    (0, class_validator_1.MinLength)(2),
+    (0, class_validator_1.MaxLength)(20),
+    __metadata("design:type", String)
+], ProductDto.prototype, "color", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'A disponibilidade do produto é obrigatória' }),
+    __metadata("design:type", Boolean)
+], ProductDto.prototype, "availability", void 0);
 exports.ProductDto = ProductDto;
 //# sourceMappingURL=prodct.dto.js.map

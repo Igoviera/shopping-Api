@@ -6,8 +6,14 @@ export declare class Product {
     description: String;
     price: number;
     departamento: string;
-    quantity: Number;
-    img: String;
+    stock: Number;
+    img: String[];
+    Assessments: Number;
+    color: string;
+    brand: string;
+    peso: Number;
+    availability: boolean;
+    createdAt: Date;
     comments: Comment[];
 }
 export declare const ProductSchema: mongoose.Schema<Product, mongoose.Model<Product, any, any, any, mongoose.Document<unknown, any, Product> & Omit<Product & {

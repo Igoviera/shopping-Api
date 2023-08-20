@@ -8,15 +8,12 @@ export type UserSchema = HydratedDocument<User>
 @Schema()
 export class User {
     @Prop({required:true})
-    @IsNotEmpty({ message: 'O nome do usuario é obrigatório' })
     name: String
 
     @Prop({required:true})
-    @IsNotEmpty({ message: 'O email do usuario é obrigatório' })
     email: String
 
     @Prop({required:true})
-    @IsNotEmpty({ message: 'A senha do usuario é obrigatória' })
     password: String
 
     @Prop({type: [{type: mongoose.Schema.Types.ObjectId, ref: 'Cart'}]})

@@ -39,7 +39,7 @@ let ProductsController = class ProductsController {
 __decorate([
     (0, common_1.Post)(),
     (0, dist_1.ApiOperation)({ summary: 'Cadastrar um produto' }),
-    (0, dist_1.ApiResponse)({ status: 200, description: 'Produto cadastrado com sucesso' }),
+    (0, dist_1.ApiResponse)({ status: 201, description: 'Produto cadastrado com sucesso' }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [prodct_dto_1.ProductDto]),

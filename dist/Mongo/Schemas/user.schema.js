@@ -13,22 +13,18 @@ exports.UserSchema = exports.User = void 0;
 const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
 const cart_schema_1 = require("./cart.schema");
-const class_validator_1 = require("class-validator");
 let User = class User {
 };
 __decorate([
     (0, mongoose_2.Prop)({ required: true }),
-    (0, class_validator_1.IsNotEmpty)({ message: 'O nome do usuario é obrigatório' }),
     __metadata("design:type", String)
 ], User.prototype, "name", void 0);
 __decorate([
     (0, mongoose_2.Prop)({ required: true }),
-    (0, class_validator_1.IsNotEmpty)({ message: 'O email do usuario é obrigatório' }),
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
     (0, mongoose_2.Prop)({ required: true }),
-    (0, class_validator_1.IsNotEmpty)({ message: 'A senha do usuario é obrigatória' }),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
 __decorate([

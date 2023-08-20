@@ -14,24 +14,21 @@ const class_validator_1 = require("class-validator");
 class UserDto {
 }
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MinLength)(2),
-    (0, class_validator_1.MaxLength)(100),
+    (0, class_validator_1.IsNotEmpty)({ message: 'O nome do usuário é obrigatório' }),
+    (0, class_validator_1.IsString)({ message: 'O nome não pode conter numeros' }),
+    (0, class_validator_1.MinLength)(3, { message: 'O nome deve ser maior ou igual a 3 caracteres' }),
+    (0, class_validator_1.MaxLength)(100, { message: 'O nome deve ser menor ou igual a 100 caracteres' }),
     __metadata("design:type", String)
 ], UserDto.prototype, "name", void 0);
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MinLength)(2),
-    (0, class_validator_1.MaxLength)(255),
+    (0, class_validator_1.IsNotEmpty)({ message: 'O e-mail é obrigatório' }),
+    (0, class_validator_1.MaxLength)(255, { message: 'O e-mail deve ser menor ou igual a 255 caracteres' }),
     __metadata("design:type", String)
 ], UserDto.prototype, "email", void 0);
 __decorate([
-    (0, class_validator_1.IsNotEmpty)(),
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.MinLength)(2),
-    (0, class_validator_1.MaxLength)(255),
+    (0, class_validator_1.IsNotEmpty)({ message: 'A senha é obrigatória' }),
+    (0, class_validator_1.MinLength)(4, { message: 'A senha deve ser maior ou igual a 4 caracteres' }),
+    (0, class_validator_1.MaxLength)(255, { message: 'A senha deve ser menor ou igual a 8 caracteres' }),
     __metadata("design:type", String)
 ], UserDto.prototype, "password", void 0);
 exports.UserDto = UserDto;

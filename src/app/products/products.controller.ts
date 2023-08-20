@@ -13,7 +13,7 @@ export class ProductsController {
 
     @Post()
     @ApiOperation({ summary: 'Cadastrar um produto' })
-    @ApiResponse({ status: 200, description: 'Produto cadastrado com sucesso' })
+    @ApiResponse({ status: 201, description: 'Produto cadastrado com sucesso' })
     async createProduct(@Body() product: ProductDto) {
         return await this.productService.createProduct(product)
     }

@@ -1,0 +1,73 @@
+[
+	{
+		"name": "Arroz Tio João Parboilizado 2kg",
+		"description": "O Arroz Parboilizado Tio João passa por um tratamento hidrotérmico (água fervente), que consiste em cozinhar parcialmente os grãos com casca, desta forma parte das vitaminas e minerais presentes no farelo migram para o interior do grão",
+		"price": 19.9,
+		"departamento": "mercado",
+		"img": "https://m.media-amazon.com/images/I/91IolzHCMhL._AC_SY606_.jpg"
+	},
+	{
+		"name": "Arroz Branco Tio Urbano 1kg",
+		"description": "O Arroz tio Urbano é reconhecido em todo o Brasil pela sua qualidade e sabor. Com mais de 60 anos de tradição, a Urbano é referência em arroz e suas marcas estão na mente e no coração dos consumidores.",
+		"price": 5.9,
+		"departamento": "mercado",
+		"img": "https://m.media-amazon.com/images/I/51mu1hLPh+L._AC_SX522_.jpg"
+	},
+	{
+		"name": "Leite Pó Integral Instantâneo Piracanjuba Pouch 800g",
+		"description": "Combina com frutas, sobremesas, achocolatados e o que mais a sua criatividade permitir. é todo o sabor do tradicional leite Piracanjuba na forma mais prática que você já viu",
+		"price": 35.81,
+		"departamento": "mercado",
+		"img": "https://m.media-amazon.com/images/I/51-I8V2e4UL._AC_SX569_.jpg"
+	},
+	{
+		"name": "Protetor Solar Nivea Sun FPS 30 200ml + Protetor Solar Nivea Sun FPS 30 100ml",
+		"description": "Nivea sun protect e hidrata possui um sistema de filtro uva/uvb que oferece alta proteção imediata e previne o envelhecimento da pele causado pela exposição solar/radiação.",
+		"price": 43.99,
+		"departamento": "mercado",
+		"img": "https://m.media-amazon.com/images/I/61CUXMVGAxL._AC_SY450_.jpg"
+	},
+	{
+		"name": "Suplemento Infantil Fortini Complete Vitamina de Frutas Danone Nutricia 800g",
+		"description": "Se manter em forma e com os nutrientes certos é importante na vida de todo mundo. Por isso, precisa-se comprar os melhores produtos para que as refeições de seu filho ou filha sejam balanceadas. Um dos produtos criados para ajudar você com isso é o Suplemento Alimentar Milnutri Complete Vitamina de Frutas Danone.",
+		"price": 80.99,
+		"departamento": "mercado",
+		"img": "https://m.media-amazon.com/images/I/71eYlBDxHCL._AC_SX466_.jpg"
+	},
+	{
+		"name": "Notebook Asus Dual Core 4GB 128GB SSD Tela 15.6” Windows 11 X515MA - BR623X",
+		"description": "Notebook ASUS X515 é perfeito para o dia a dia, que oferece desempenho e recursos visuais imersivos. Sua Tela NanoEdge possui bordas incrivelmente finas e um revestimento fosco antirreflexo para uma experiência verdadeiramente envolvente. Além disso, o notebook ASUS X515 possui armazenamento SSD*, que além de mais rápido é mais leve e mais seguro, enquanto seu chassi reforçado melhora a digitação e permite abrir e fechar a tampa em um movimento suave.",
+		"price": 1529,
+		"departamento": "informatica",
+		"img": "https://imgs.casasbahia.com.br/55048244/1g.jpg?imwidth=500"
+	},
+	{
+		"name": "Notebook 2 em 1 Positivo DUO C464D-1 Intel Celeron 4GB 64GB 11.6, IPS Full HD",
+		"description": "O Notebook 2 em 1 Positivo Duo c464d-1 oferece uma nova experiência de trabalho e diversão, com a versatilidade que você precisa para acompanhar a sua rotina. Alterne entre notebook, tablet, base ou tenda e escolha a melhor forma que se adapte às suas necessidades. O dispositivo foi criado para te acompanhar em qualquer lugar.",
+		"price": 1599,
+		"departamento": "informatica",
+		"img": "https://m.media-amazon.com/images/I/519i2xUMwaL._AC_SX679_.jpg"
+	},
+	{
+		"name": "Smartphone Motorola Moto G22 Preto 128GB 4GB RAM Tela de 6.5",
+		"description": "O Motorola Moto G22 possui sistema Quad Câmera avançado, tela Max Vision de alta resolução e bateria de longa duração. Tudo o que você sempre quis e muito mais. Tire fotos mais claras e nítidas em qualquer iluminação e ângulo, com um sistema de câmera de 50 MP.",
+		"price": 1076,
+		"departamento": "celulares",
+		"img": "https://imgs.casasbahia.com.br/55043422/1g.jpg"
+
+	},
+	{
+		"name": "Cooktop 4 Bocas Itatiaia Essencial com Mesa de Vidro Temperado e Acendimento Automático Preto Bivolt",
+		"description": "Cooktop 4 Bocas Itatiaia Essencial com Mesa de Vidro Temperado e Acendimento Automático Preto Bivolt Apresentamos a você um Cooktop 4 Bocas extremamente versátil e moderno, e não é só isso... queremos levar a sua cozinha um produto que irá facilitar o seu dia a dia, sendo prático, fácil de limpar e muito resistente.",
+		"price": 399.6,
+		"departamento": "eletrodomesticos",
+		"img": "https://images-americanas.b2w.io/produtos/6179973611/imagens/cooktop-4-bocas-itatiaia-essencial-com-mesa-de-vidro-temperado-e-acendimento-automatico-preto-bivolt/6179973661_1_xlarge.jpg"
+	},
+	{
+		"name": "iPhone 13 Apple 128GB Estelar Tela de 6,1”, Câmera Dupla de 12MP",
+		"description": "iPhone 13. O sistema de câmera dupla mais avançado em um iPhone. Chip A15 Bionic com velocidade impressionante. Um grande salto em bateria. Projetado para durar. 5G ultrarrápido*. E tela Super Retina XDR mais brilhante.",
+		"price": 4299,
+		"departamento": "celulares",
+		"img": "https://imgs.casasbahia.com.br/55048759/1g.jpg"
+	}
+]

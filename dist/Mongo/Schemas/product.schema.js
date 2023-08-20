@@ -33,11 +33,35 @@ __decorate([
 __decorate([
     (0, mongoose_2.Prop)(),
     __metadata("design:type", Number)
-], Product.prototype, "quantity", void 0);
+], Product.prototype, "stock", void 0);
+__decorate([
+    (0, mongoose_2.Prop)(),
+    __metadata("design:type", Array)
+], Product.prototype, "img", void 0);
+__decorate([
+    (0, mongoose_2.Prop)(),
+    __metadata("design:type", Number)
+], Product.prototype, "Assessments", void 0);
 __decorate([
     (0, mongoose_2.Prop)(),
     __metadata("design:type", String)
-], Product.prototype, "img", void 0);
+], Product.prototype, "color", void 0);
+__decorate([
+    (0, mongoose_2.Prop)(),
+    __metadata("design:type", String)
+], Product.prototype, "brand", void 0);
+__decorate([
+    (0, mongoose_2.Prop)(),
+    __metadata("design:type", Number)
+], Product.prototype, "peso", void 0);
+__decorate([
+    (0, mongoose_2.Prop)(),
+    __metadata("design:type", Boolean)
+], Product.prototype, "availability", void 0);
+__decorate([
+    (0, mongoose_2.Prop)({ default: Date.now }),
+    __metadata("design:type", Date)
+], Product.prototype, "createdAt", void 0);
 __decorate([
     (0, mongoose_2.Prop)({ type: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Comment' }] }),
     __metadata("design:type", Array)
