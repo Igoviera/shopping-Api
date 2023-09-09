@@ -22,27 +22,4 @@ export class CheckoutController {
   ) {
     return this.checkoutService.create(cardId, createCheckoutDto);
   }
-
-  @Get()
-  findAll() {
-    return this.checkoutService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.checkoutService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateCheckoutDto: UpdateCheckoutDto,
-  ) {
-    return this.checkoutService.update(+id, updateCheckoutDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.checkoutService.remove(+id);
-  }
 }

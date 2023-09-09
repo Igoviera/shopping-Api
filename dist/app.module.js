@@ -34,7 +34,7 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            config_1.ConfigModule.forRoot(),
+            config_1.ConfigModule.forRoot({ isGlobal: true }),
             mongoose_1.MongooseModule.forRoot(process.env.DATABASE_URL),
             mongoose_1.MongooseModule.forFeature([
                 { name: product_schema_1.Product.name, schema: product_schema_1.ProductSchema },

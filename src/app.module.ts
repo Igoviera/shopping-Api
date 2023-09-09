@@ -23,7 +23,7 @@ import { EmailModule } from './app/email/email.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({isGlobal:true}),
     MongooseModule.forRoot(process.env.DATABASE_URL),
     MongooseModule.forFeature([
       {name:Product.name, schema: ProductSchema},

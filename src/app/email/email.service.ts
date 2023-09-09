@@ -7,11 +7,11 @@ export class EmailService {
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: 'smtp.office365.com',
-      port: 587,
+      host: '',
+      port: ,
       auth: {
-        user: 'igo.vieira@live.com',
-        pass: 'rosarosa123',
+        user: '',
+        pass: '',
       },
     });
   }
