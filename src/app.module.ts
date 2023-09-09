@@ -18,6 +18,8 @@ import { CommetModule } from './app/commet/commet.module';
 import { Comment, CommentsSchema } from './Mongo/Schemas/comment.schema';
 import { CommetController } from './app/commet/commet.controller';
 import { CommetService } from './app/commet/commet.service';
+import { CheckoutModule } from './app/checkout/checkout.module';
+import { EmailModule } from './app/email/email.module';
 
 @Module({
   imports: [
@@ -34,8 +36,8 @@ import { CommetService } from './app/commet/commet.service';
     CartModule,
     AuthModule,
     CommetModule,
-   
-
+    CheckoutModule,
+    EmailModule,
   ],
   controllers: [ProductsController, CartController, UserController, CommetController],
   providers: [ProductsService, CartService, UserService, CommetService],

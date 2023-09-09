@@ -7,6 +7,7 @@ import { User } from 'src/Mongo/Schemas/user.schema';
 import { CartDto } from '../cart/cart.dto';
 import { UserDto } from './user.dto';
 import { AuthDto } from 'src/auth/auth.Dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
@@ -17,8 +18,10 @@ export class UserService {
 
     async createUser(user: UserDto) {
         try {
+            const hashedPassword = await bcrypt.hash(user.password, 10);
+
             const cart = await this.cartModel.create({ product: [] });
-            const newUser = await this.userModel.create({ ...user, cart: cart._id });
+            const newUser = await this.userModel.create({ ...user, password: hashedPassword, cart: cart._id });
             
             return newUser;
         } catch (error) {

@@ -18,6 +18,7 @@ const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const cart_schema_1 = require("../../Mongo/Schemas/cart.schema");
 const user_schema_1 = require("../../Mongo/Schemas/user.schema");
+const bcrypt = require("bcrypt");
 let UserService = class UserService {
     constructor(userModel, cartModel) {
         this.userModel = userModel;
@@ -25,8 +26,9 @@ let UserService = class UserService {
     }
     async createUser(user) {
         try {
+            const hashedPassword = await bcrypt.hash(user.password, 10);
             const cart = await this.cartModel.create({ product: [] });
-            const newUser = await this.userModel.create(Object.assign(Object.assign({}, user), { cart: cart._id }));
+            const newUser = await this.userModel.create(Object.assign(Object.assign({}, user), { password: hashedPassword, cart: cart._id }));
             return newUser;
         }
         catch (error) {

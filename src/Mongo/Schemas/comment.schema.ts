@@ -10,6 +10,9 @@ export class Comment {
     @Prop()
     text: string
 
+    @Prop()
+    star: number
+
     @Prop({ default: Date.now })
     createdAt: Date
 

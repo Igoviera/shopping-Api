@@ -27,6 +27,8 @@ const commet_module_1 = require("./app/commet/commet.module");
 const comment_schema_1 = require("./Mongo/Schemas/comment.schema");
 const commet_controller_1 = require("./app/commet/commet.controller");
 const commet_service_1 = require("./app/commet/commet.service");
+const checkout_module_1 = require("./app/checkout/checkout.module");
+const email_module_1 = require("./app/email/email.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -45,6 +47,8 @@ AppModule = __decorate([
             cart_module_1.CartModule,
             auth_module_1.AuthModule,
             commet_module_1.CommetModule,
+            checkout_module_1.CheckoutModule,
+            email_module_1.EmailModule,
         ],
         controllers: [products_controller_1.ProductsController, cart_controller_1.CartController, user_controller_1.UserController, commet_controller_1.CommetController],
         providers: [products_service_1.ProductsService, cart_service_1.CartService, user_service_1.UserService, commet_service_1.CommetService],

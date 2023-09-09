@@ -11,8 +11,7 @@ export class Cart {
     
     @Prop({type:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }]})
     product: Product[]
-
-    
+  
 }
 
 export const CartSchema = SchemaFactory.createForClass(Cart)
